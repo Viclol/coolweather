@@ -1,5 +1,6 @@
 package com.coolweather.android;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -25,6 +26,7 @@ import com.coolweather.android.gson.Data;
 import com.coolweather.android.gson.Forecast;
 import com.coolweather.android.gson.Forecast1;
 import com.coolweather.android.gson.Weather;
+import com.coolweather.android.service.AutoUpdateService;
 import com.coolweather.android.util.HttpUtil;
 import com.coolweather.android.util.Utility;
 
@@ -204,7 +206,8 @@ public class WeatherActivity extends AppCompatActivity {
         String updateTime = weather.cityInfo.updateTime;
         //String degree = weather.now.temperature+"℃";
         String degree = weather.data.wenDu+"℃";
-        String weatherInfo = weather.data.yesterday.type;
+        String weatherInfo = weather.data.quality;
+        //Log.d("weather", "showWeathererInfo: tyoe"+weather.data.yesterday.type);
         titleCity.setText(cityName);
         titleUpdateTime.setText(updateTime);
         degreeText.setText(degree);
@@ -234,6 +237,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 }
