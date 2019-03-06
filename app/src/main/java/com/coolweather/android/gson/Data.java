@@ -19,10 +19,39 @@ public class Data {
     public String wenDu;
     @SerializedName("ganmao")
     public String ganMao;
+    @SerializedName("yesterday")
+    public Yesterday yesterday;
+
+    public class Yesterday{
+        @SerializedName("date")
+        public String date;
+        @SerializedName("ymd")
+        public String ymd;
+        @SerializedName("week")
+        public String week;
+        @SerializedName("sunrise")
+        public String sunRise;
+        @SerializedName("high")
+        public String max;
+        @SerializedName("low")
+        public String min;
+        @SerializedName("sunset")
+        public String sunSet;
+        @SerializedName("aqi")
+        public String aqi;
+        @SerializedName("fx")
+        public String fx;
+        @SerializedName("fl")
+        public String fl;
+        @SerializedName("type")
+        public String type;
+        @SerializedName("notice")
+        public String notice;
+    }
 
 //    @SerializedName("forecast")
 //    public More more;
-
+//
 //    public class More{
 //        @SerializedName("date")
 //        public String date;

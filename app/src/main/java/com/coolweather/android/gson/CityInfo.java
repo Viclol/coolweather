@@ -10,12 +10,12 @@ public class CityInfo {
     @SerializedName("city")
     public String cityName;
 
-    @SerializedName("cityid")
+    @SerializedName("cityId")
     public String weatherId;
 
     @SerializedName("parent")
     public String parent;
 
-    @SerializedName("updatetime")
+    @SerializedName("updateTime")
     public String updateTime;
 }
